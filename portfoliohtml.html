@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 1 - Portfolio Cake</title>
+    <link rel="stylesheet" href="css/cssko.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pixel Particles -->
+    <div class="pixels">
+        <span>✦</span><span>◆</span><span>▲</span><span>●</span><span>★</span>
+        <span>♥</span><span>♦</span><span>♠</span><span>♣</span><span>☆</span>
+    </div>
+
+    <div class="container">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="lives">♥♥♥</div>
+            <h1>PORTFOLIO CAKE</h1>
+            <div class="coins">🪙 x<span id="coin-count">0</span></div>
+        </header>
+
+        <p class="start-text">CLICK LAYER TO START</p>
+
+        <!-- The Cake -->
+        <div class="cake">
+            
+            <!-- TOP: PLAYER STATS (About) -->
+            <div class="layer-box" onclick="toggleLayer('about')">
+                <div class="layer game-layer top">
+                    <div class="icing">
+                        <span class="pixel-icon">👾</span>
+                        <span class="pixel-icon">🍓</span>
+                        <span class="pixel-icon">👾</span>
+                    </div>
+                    <div class="layer-face">
+                        <span class="label">PLAYER 1</span>
+                        <span class="level">LV.12</span>
+                    </div>
+                </div>
+                
+                <div id="about" class="content">
+                    <div class="card">
+                        <div class="avatar-box">
+                            <div class="avatar-small">
+                                <img src="images/picko.jpg" alt="Catleya Vanzuela">
+                            </div>
+                            <div class="hp-bar-small">
+                                <div class="hp-fill"></div>
+                            </div>
+                        </div>
+                        <h2>CATLEYA VANZUELA</h2>
+                        <p class="class">NetSec Mage</p>
+                        <p class="desc">Cybersecurity student casting protection spells on networks!</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <span class="stat-icon">⚔️</span>
+                                <span class="stat-name">STR</span>
+                                <div class="stat-bar"><div style="width: 85%"></div></div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🧠</span>
+                                <span class="stat-name">INT</span>
+                                <div class="stat-bar"><div style="width: 92%"></div></div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">⚡</span>
+                                <span class="stat-name">DEX</span>
+                                <div class="stat-bar"><div style="width: 78%"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="inventory">
+                            <h3>INVENTORY</h3>
+                            <div class="items">
+                                <span class="item" title="Python">🐍</span>
+                                <span class="item" title="Linux">🐧</span>
+                                <span class="item" title="Security">🔐</span>
+                                <span class="item" title="Networks">🌐</span>
+                                <span class="item rare" title="CTF">🏆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECOND: QUESTS (Works with Image Selector) -->
+            <div class="layer-box" onclick="toggleLayer('works')">
+                <div class="layer game-layer middle">
+                    <div class="icing cream">
+                        <div class="drip"></div>
+                        <div class="drip"></div>
+                        <div class="drip"></div>
+                    </div>
+                    <div class="layer-face">
+                        <span class="label">CREATIVE WORKS</span>
+                        <span class="stars">★★★☆☆</span>
+                    </div>
+                </div>
+
+                <div id="works" class="content">
+                    <div class="card">
+                        <h2>SELECT WORK</h2>
+                        
+                        <!-- Image Display Screen -->
+                        <div class="game-screen">
+                            <div class="screen-header">
+                                <span>WORLD 1-1</span>
+                                <span class="blink">◀ SELECT ▶</span>
+                            </div>
+                            <div class="screen-display">
+                                <img id="quest-image" src="images/poster.jpg" alt="Quest Preview">
+                                <div class="scanline"></div>
+                            </div>
+                            <div class="screen-info">
+                                <h3 id="quest-title">Digital Illustration</h3>
+                                <p id="quest-desc">How Lucky We Are To be Inquisitive!</p>
+                                <div class="rewards">
+                                    <span class="reward">🎁 Art</span>
+                                    <span class="reward">🎁 Design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Selector -->
+                        <div class="selector">
+                            <p class="selector-label">◀ CHOOSE QUEST ▶</p>
+                            <div class="thumbnails">
+                                <div class="thumb active" onclick="selectQuest(0, event)">
+                                    <img src="images/poster.jpg" alt="Project 1">
+                                    <span class="thumb-num">1</span>
+                                </div>
+                                <div class="thumb" onclick="selectQuest(1, event)">
+                                    <img src="images/locked.jpg" alt="Project locked">
+                                    <span class="lock">🔒</span>
+                                    <span class="thumb-num">?</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="start-btn">START QUEST →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THIRD: ACHIEVEMENTS (Experience) -->
+            <div class="layer-box" onclick="toggleLayer('exp')">
+                <div class="layer game-layer middle-dark">
+                    <div class="icing choco">
+                        <span class="chip">◆</span>
+                        <span class="chip">◆</span>
+                        <span class="chip">◆</span>
+                    </div>
+                    <div class="layer-face">
+                        <span class="label">BADGES</span>
+                        <span class="badge-count">3/5</span>
+                    </div>
+                </div>
+
+                <div id="exp" class="content">
+                    <div class="card">
+                        <h2>ACHIEVEMENTS</h2>
+                        
+                        <div class="badge-grid">
+                            <div class="badge-card earned">
+                                <div class="badge-icon">🎓</div>
+                                <h4>Arts and Design Student</h4>
+                                <p>Finished journey</p>
+                                <span class="date">2022-2024</span>
+                            </div>
+                            <div class="badge-card earned">
+                                <div class="badge-icon">🏆</div>
+                                <h4>BSIT NetSec Student</h4>
+                                <p>Started IT journey</p>
+                                <span class="date">2024-Present</span>
+                            </div>
+                            </div>
+                            <div class="badge-card locked">
+                                <div class="badge-icon">🔒</div>
+                                <h4>???</h4>
+                                <p>Keep playing!</p>
+                            </div>
+                        </div>
+
+                        <div class="exp-bar">
+                            <span>EXP: 2,450 / 3,000</span>
+                            <div class="progress"><div style="width: 82%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTOM: SAVE (Contact) -->
+            <div class="layer-box" onclick="toggleLayer('contact')">
+                <div class="layer game-layer bottom">
+                    <div class="icing">
+                        <span class="cherry">🍒</span>
+                    </div>
+                    <div class="layer-face">
+                        <span class="label">SAVE</span>
+                        <span class="save-icon">💾</span>
+                    </div>
+                </div>
+
+                <div id="contact" class="content">
+                    <div class="card">
+                        <div class="save-point">
+                            <div class="save-animation">💾</div>
+                            <h2>SAVE GAME?</h2>
+                            <p>Continue your adventure?</p>
+                            
+                            <div class="contact-menu">
+                                <a href="mailto:catleyavanzuela92@gmail.com" class="menu-btn">
+                                    <span>📧</span>
+                                    <div>
+                                        <strong>EMAIL</strong>
+                                        <small>catleyavanzuela92@gmail.com</small>
+                                    </div>
+                                </a>
+                                <a href="#" class="menu-btn">
+                                    <span>🐙</span>
+                                    <div>
+                                        <strong>CONTACT NUMBER</strong>
+                                        <small>1234-567-6789</small>
+                                    </div>
+                                </a>
+                                <a href="#" class="menu-btn">
+                                    <span>💼</span>
+                                    <div>
+                                        <strong>LINKEDIN</strong>
+                                        <small>/in/catleya</small>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <button class="save-game-btn" onclick="saveGame()">💾 SAVE PROGRESS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p class="pixel-text blink">INSERT COIN TO CONTINUE</p>
+            <p>© 2024 PLAYER 1</p>
+        </footer>
+    </div>
+
+    <script>
+        // Coin counter animation
+        let coins = 0;
+        setInterval(() => {
+            coins += 5;
+            document.getElementById('coin-count').textContent = coins;
+        }, 2000);
+
+        // Quest data
+        const quests = [
+            {
+                image: 'images/poster.jpg',
+                title: 'Digital Illustration',
+                desc: 'How Lucky We Are To Be Inquisitive!',
+                world: '1-1',
+                rewards: ['🎁 Art', '🎁 Design']
+            },
+            {
+                image: 'images/locked.jpg',
+                title: '???',
+                desc: 'Complete other quests to unlock',
+                world: '?-?',
+                rewards: ['🎁 ???', '🎁 ???']
+            }
+        ];
+
+        // Toggle layer expansion
+        function toggleLayer(id) {
+            const content = document.getElementById(id);
+            const allContents = document.querySelectorAll('.content');
+            
+            allContents.forEach(c => {
+                if (c.id !== id) c.classList.remove('active');
+            });
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                setTimeout(() => {
+                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+
+        // Select quest image
+        function selectQuest(index, event) {
+            event.stopPropagation();
+            
+            const quest = quests[index];
+            const img = document.getElementById('quest-image');
+            const title = document.getElementById('quest-title');
+            const desc = document.getElementById('quest-desc');
+            
+            // Add glitch effect
+            img.style.filter = 'hue-rotate(90deg) blur(2px)';
+            setTimeout(() => {
+                img.src = quest.image;
+                title.textContent = quest.title;
+                desc.textContent = quest.desc;
+                img.style.filter = 'none';
+            }, 200);
+            
+            // Update thumbnails
+            document.querySelectorAll('.thumb').forEach((t, i) => {
+                t.classList.toggle('active', i === index);
+            });
+            
+            // Update header
+            document.querySelector('.screen-header span:first-child').textContent = 'WORLD ' + quest.world;
+            
+            // Update rewards
+            const rewardsDiv = document.querySelector('.rewards');
+            rewardsDiv.innerHTML = quest.rewards.map(r => `<span class="reward">${r}</span>`).join('');
+        }
+
+        // Save game animation
+        function saveGame() {
+            const btn = document.querySelector('.save-game-btn');
+            btn.textContent = '✓ SAVED!';
+            btn.style.background = '#4ade80';
+            setTimeout(() => {
+                btn.textContent = '💾 SAVE PROGRESS';
+                btn.style.background = '';
+            }, 2000);
+        }
+
+        // Floating pixels
+        document.querySelectorAll('.pixels span').forEach((span, i) => {
+            span.style.left = Math.random() * 100 + '%';
+            span.style.animationDelay = (Math.random() * 5) + 's';
+            span.style.color = ['#ff6b9d', '#c084fc', '#fbbf24', '#60a5fa'][Math.floor(Math.random() * 4)];
+        });
+    </script>
+</body>
+</html>
